@@ -74,10 +74,10 @@ class JankenAcchi
 end
 
 next_game = true
-hoge = JankenAcchi.new
-hoge.game
+play = JankenAcchi.new
+play.game
 
 
 while  next_game
- next_game = hoge.game
+ next_game = play.game
 end
