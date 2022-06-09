@@ -42,12 +42,20 @@ class JankenAcchi
     if player_face == program_face
       if (@player_hand == 0 && program_hand== 1)||(@player_hand == 1 && program_hand == 2)||(@player_hand == 2 && program_hand == 0)
         puts "あっち向いてホイに勝った！"
+        puts "ゲーム終了"
+        puts "------------------------"
+        return false
       else
         puts "あっち向いてホイに負けた"
+        puts "ゲーム終了"
+        puts "------------------------"
+        return false
       end
-        
     else
       puts "引き分け"
+      puts "じゃんけんに戻る"
+      puts "------------------------"
+      return true
     end
   end
 end
@@ -57,12 +65,15 @@ puts "じゃんけん…"
 hoge = JankenAcchi.new
 hoge.janken
 
-next_game = true
-while next_game
-  next_game = hoge.janken
+next_janken = true
+while next_janken
+  next_janken = hoge.janken
 end
 
 puts "あっち向いて…"
 hoge.acchimuite
-puts "ゲーム終了"
-puts "------------------------"
+
+next_game = true
+while next_game
+  next_game = hoge.janken
+end
